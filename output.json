@@ -1,0 +1,355 @@
+{
+    "facilities": [
+        {
+            "id": "way/44368235",
+            "master_facility_id": "way/44368235",
+            "name": "Kas\u00e1rna \u010cern\u00e1 Pole",
+            "address": "unknown",
+            "label": "military",
+            "capacity": "unknown",
+            "geometry": "polygon",
+            "geolocation": [
+                49.2147,
+                16.6184
+            ]
+        },
+        {
+            "id": "way/51745073",
+            "master_facility_id": "way/44368235",
+            "name": "unknown",
+            "address": "unknown",
+            "label": "yes",
+            "capacity": "unknown",
+            "geometry": "polygon",
+            "geolocation": [
+                49.2154,
+                16.62
+            ]
+        },
+        {
+            "id": "way/306080276",
+            "master_facility_id": "way/44368235",
+            "name": "unknown",
+            "address": "unknown",
+            "label": "warehouse",
+            "capacity": "unknown",
+            "geometry": "polygon",
+            "geolocation": [
+                49.2157,
+                16.6196
+            ]
+        },
+        {
+            "id": "way/306080278",
+            "master_facility_id": "way/44368235",
+            "name": "unknown",
+            "address": "unknown",
+            "label": "warehouse",
+            "capacity": "unknown",
+            "geometry": "polygon",
+            "geolocation": [
+                49.2159,
+                16.62
+            ]
+        },
+        {
+            "id": "way/306080279",
+            "master_facility_id": "way/44368235",
+            "name": "unknown",
+            "address": "unknown",
+            "label": "warehouse",
+            "capacity": "unknown",
+            "geometry": "polygon",
+            "geolocation": [
+                49.2151,
+                16.6212
+            ]
+        },
+        {
+            "id": "way/306080280",
+            "master_facility_id": "way/44368235",
+            "name": "unknown",
+            "address": "unknown",
+            "label": "warehouse",
+            "capacity": "unknown",
+            "geometry": "polygon",
+            "geolocation": [
+                49.2138,
+                16.6197
+            ]
+        },
+        {
+            "id": "way/306080282",
+            "master_facility_id": "way/44368235",
+            "name": "unknown",
+            "address": "unknown",
+            "label": "warehouse",
+            "capacity": "unknown",
+            "geometry": "polygon",
+            "geolocation": [
+                49.2154,
+                16.621
+            ]
+        },
+        {
+            "id": "way/306080283",
+            "master_facility_id": "way/44368235",
+            "name": "unknown",
+            "address": "unknown",
+            "label": "warehouse",
+            "capacity": "unknown",
+            "geometry": "polygon",
+            "geolocation": [
+                49.2161,
+                16.6205
+            ]
+        },
+        {
+            "id": "way/306080284",
+            "master_facility_id": "way/44368235",
+            "name": "unknown",
+            "address": "unknown",
+            "label": "civic",
+            "capacity": "unknown",
+            "geometry": "polygon",
+            "geolocation": [
+                49.2143,
+                16.6178
+            ]
+        },
+        {
+            "id": "way/306080285",
+            "master_facility_id": "way/44368235",
+            "name": "unknown",
+            "address": "unknown",
+            "label": "civic",
+            "capacity": "unknown",
+            "geometry": "polygon",
+            "geolocation": [
+                49.215,
+                16.6165
+            ]
+        },
+        {
+            "id": "way/306080286",
+            "master_facility_id": "way/44368235",
+            "name": "unknown",
+            "address": "unknown",
+            "label": "residential",
+            "capacity": "unknown",
+            "geometry": "polygon",
+            "geolocation": [
+                49.2133,
+                16.6175
+            ]
+        },
+        {
+            "id": "way/306080287",
+            "master_facility_id": "way/44368235",
+            "name": "unknown",
+            "address": "unknown",
+            "label": "warehouse",
+            "capacity": "unknown",
+            "geometry": "polygon",
+            "geolocation": [
+                49.2135,
+                16.6184
+            ]
+        },
+        {
+            "id": "way/306080289",
+            "master_facility_id": "way/44368235",
+            "name": "unknown",
+            "address": "unknown",
+            "label": "warehouse",
+            "capacity": "unknown",
+            "geometry": "polygon",
+            "geolocation": [
+                49.2138,
+                16.6194
+            ]
+        },
+        {
+            "id": "way/306080290",
+            "master_facility_id": "way/44368235",
+            "name": "unknown",
+            "address": "unknown",
+            "label": "warehouse",
+            "capacity": "unknown",
+            "geometry": "polygon",
+            "geolocation": [
+                49.2136,
+                16.6187
+            ]
+        },
+        {
+            "id": "way/306080291",
+            "master_facility_id": "way/44368235",
+            "name": "unknown",
+            "address": "unknown",
+            "label": "warehouse",
+            "capacity": "unknown",
+            "geometry": "polygon",
+            "geolocation": [
+                49.2137,
+                16.619
+            ]
+        },
+        {
+            "id": "way/306080292",
+            "master_facility_id": "way/44368235",
+            "name": "unknown",
+            "address": "unknown",
+            "label": "service",
+            "capacity": "unknown",
+            "geometry": "polygon",
+            "geolocation": [
+                49.2156,
+                16.6178
+            ]
+        },
+        {
+            "id": "way/306080294",
+            "master_facility_id": "way/44368235",
+            "name": "unknown",
+            "address": "unknown",
+            "label": "warehouse",
+            "capacity": "unknown",
+            "geometry": "polygon",
+            "geolocation": [
+                49.2157,
+                16.6211
+            ]
+        },
+        {
+            "id": "way/306080298",
+            "master_facility_id": "way/44368235",
+            "name": "unknown",
+            "address": "unknown",
+            "label": "warehouse",
+            "capacity": "unknown",
+            "geometry": "polygon",
+            "geolocation": [
+                49.2165,
+                16.6204
+            ]
+        },
+        {
+            "id": "way/306080300",
+            "master_facility_id": "way/44368235",
+            "name": "unknown",
+            "address": "unknown",
+            "label": "industrial",
+            "capacity": "unknown",
+            "geometry": "polygon",
+            "geolocation": [
+                49.2132,
+                16.6172
+            ]
+        },
+        {
+            "id": "way/306080302",
+            "master_facility_id": "way/44368235",
+            "name": "unknown",
+            "address": "unknown",
+            "label": "warehouse",
+            "capacity": "unknown",
+            "geometry": "polygon",
+            "geolocation": [
+                49.2156,
+                16.6207
+            ]
+        },
+        {
+            "id": "way/306080303",
+            "master_facility_id": "way/44368235",
+            "name": "unknown",
+            "address": "unknown",
+            "label": "warehouse",
+            "capacity": "unknown",
+            "geometry": "polygon",
+            "geolocation": [
+                49.2161,
+                16.6211
+            ]
+        },
+        {
+            "id": "way/306080305",
+            "master_facility_id": "way/44368235",
+            "name": "unknown",
+            "address": "unknown",
+            "label": "shed",
+            "capacity": "unknown",
+            "geometry": "polygon",
+            "geolocation": [
+                49.2135,
+                16.6172
+            ]
+        },
+        {
+            "id": "way/306080306",
+            "master_facility_id": "way/44368235",
+            "name": "unknown",
+            "address": "unknown",
+            "label": "warehouse",
+            "capacity": "unknown",
+            "geometry": "polygon",
+            "geolocation": [
+                49.2145,
+                16.622
+            ]
+        },
+        {
+            "id": "way/306080307",
+            "master_facility_id": "way/44368235",
+            "name": "unknown",
+            "address": "unknown",
+            "label": "warehouse",
+            "capacity": "unknown",
+            "geometry": "polygon",
+            "geolocation": [
+                49.2161,
+                16.6208
+            ]
+        },
+        {
+            "id": "way/306080309",
+            "master_facility_id": "way/44368235",
+            "name": "unknown",
+            "address": "unknown",
+            "label": "civic",
+            "capacity": "unknown",
+            "geometry": "polygon",
+            "geolocation": [
+                49.214,
+                16.6171
+            ]
+        },
+        {
+            "id": "way/306080310",
+            "master_facility_id": "way/44368235",
+            "name": "unknown",
+            "address": "unknown",
+            "label": "warehouse",
+            "capacity": "unknown",
+            "geometry": "polygon",
+            "geolocation": [
+                49.2148,
+                16.621
+            ]
+        },
+        {
+            "id": "way/1042569551",
+            "master_facility_id": "way/44368235",
+            "name": "unknown",
+            "address": "unknown",
+            "label": "yes",
+            "capacity": "unknown",
+            "geometry": "polygon",
+            "geolocation": [
+                49.2146,
+                16.6186
+            ]
+        }
+    ]
+}
