@@ -24,7 +24,7 @@ facilities={
     ]
 }
 
-for area in input["area"]:
+for area in input["areas"]:
     wayIDs=[]
     wayIDs.append(area["id"])
     for buildingID in area["buildingIDs"]:
@@ -37,10 +37,16 @@ for area in input["area"]:
             "address":"unknown",
             "label":"unknown",
             "capacity":"unknown",
-            "geometry":"polygon"
+            "geometry":"polygon",
+            "geolocation":"unknown",      #center coordinates
+            "coordinates":"unknown",
+            "lastchange":"unknown"
         }
         facility["id"]=wayID
         driver.get("https://www.openstreetmap.org/api/0.6/"+wayID)
+        way= driver.find_element(By.TAG_NAME,"way")
+        facility["lastchange"]=way.get_attribute("timestamp")
+
         tags=driver.find_elements(By.TAG_NAME,"tag")
         for tag in tags:
             key=tag.get_attribute("k")
@@ -55,13 +61,14 @@ for area in input["area"]:
         nds=driver.find_elements(By.TAG_NAME,"nd")
         for node_id in nds:
             nodes_ids.append(node_id.get_attribute("ref"))
-
+            
         for node_id in nodes_ids:
             driver.get("https://www.openstreetmap.org/api/0.6/node/"+node_id)
             node=driver.find_element(By.TAG_NAME,"node")
             nodes_coordinates.append([node.get_attribute("lat"),node.get_attribute("lon")])
 
         facility["geolocation"]=GetCenterCoordinates(nodes_coordinates)
+        facility["coordinates"]=nodes_coordinates
         facilities["facilities"].append(facility)
 
 
