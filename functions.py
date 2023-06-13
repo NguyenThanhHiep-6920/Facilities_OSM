@@ -25,6 +25,7 @@ def ReturnFacilityData(driver,facilityID,masterFacilityID,facilityTypesIDs,facil
             "capacity":"unknown",
             "geometry":"polygon",
             "geolocation":"unknown",      #center coordinates
+            "zoom":17,
             'facilitytype_id':facilityTypesIDs[facilityType],
             'valid': True,
             'startdate':"unknown",
