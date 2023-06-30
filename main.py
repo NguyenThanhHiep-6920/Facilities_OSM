@@ -6,36 +6,34 @@ from selenium.webdriver.support import expected_conditions as EC
 
 import json
 import os
-from functions import ReturnFacilityData
+from functions import GetFacilityData
 
-# Lấy đường dẫn tuyệt đối của tệp Python hiện tại
+# Číst data ze souboru facilitiesIDs.json
 current_directory = os.path.dirname(os.path.abspath(__file__))
 json_file_path_1 = os.path.join(current_directory, 'facilitiesIDs.json')
 
-# Đọc dữ liệu từ tệp JSON
 with open (json_file_path_1,"r") as file:
     input= json.load(file)
 
 facilityTypesIDs = ["areaTypeID","buildingTypeID"]
-
-driver = webdriver.Chrome()
-
+#databáze
 facilities={
     "facilities":[
 
     ]
 }
+#provádět načítání dat
+driver = webdriver.Chrome()
 
 for area in input["areas"]:
-    facilities["facilities"].append(ReturnFacilityData(driver,area["id"],area["id"],facilityTypesIDs,0))
+    facilities["facilities"].append(GetFacilityData(driver,area["id"],area["id"],facilityTypesIDs,0))
     for buildingID in area["buildingIDs"]:
-        facilities["facilities"].append(ReturnFacilityData(driver,buildingID,area["id"],facilityTypesIDs,1))
+        facilities["facilities"].append(GetFacilityData(driver,buildingID,area["id"],facilityTypesIDs,1))
 
 driver.close()
 
-# Kết hợp đường dẫn tuyệt đối với tên tệp JSON
+# Zapište data do souboru output.json
 json_file_path_2 = os.path.join(current_directory,'output.json')
-# Ghi dữ liệu JSON vào file
 with open(json_file_path_2, 'w') as file:
     json.dump(facilities, file, indent=4)
 

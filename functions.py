@@ -2,6 +2,7 @@ import uuid
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
+#získat souřadnice středu
 def GetCenterCoordinates(coordinatesData):
     lat_sum=0
     lon_sum=0
@@ -16,49 +17,55 @@ def randomUUID(limit):
     random_uuid = [uuid.uuid4() for _ in range(limit)]
     return random_uuid
 
-def ReturnFacilityData(driver,facilityID,masterFacilityID,facilityTypesIDs,facilityType):
-        facility={
-            "id":facilityID,
-            "name":"unknown",
-            "address":"unknown",
-            "label":"unknown",
-            "capacity":"unknown",
-            "geometry":"polygon",
-            "geolocation":"unknown",      #center coordinates
-            "zoom":17,
-            'facilitytype_id':facilityTypesIDs[facilityType],
-            'valid': True,
-            'startdate':"unknown",
-            'enddate':"unknown",
-            "lastchange":"unknown",
-            "master_facility_id":masterFacilityID,
-            "coordinates":"unknown"
-        }
-        driver.get("https://www.openstreetmap.org/api/0.6/"+facilityID)
-        way= driver.find_element(By.TAG_NAME,"way")
-        facility["lastchange"]=way.get_attribute("timestamp")
+#získat facility data a namapovat je do databáze
+def GetFacilityData(driver,facilityID,masterFacilityID,facilityTypesIDs,facilityType):
+    facility={
+        "id":facilityID,
+        "name":"unknown",
+        "address":"unknown",
+        "label":"unknown",
+        "capacity":"unknown",
+        "geometry":"unknown",
+        "geolocation":"unknown",      
+        "zoom":17,
+        'facilitytype_id':facilityTypesIDs[facilityType],
+        'valid': True,
+        'startdate':"unknown",
+        'enddate':"unknown",
+        "lastchange":"unknown",
+        "master_facility_id":masterFacilityID,
+        #"coordinates":"unknown"
+    }
 
-        tags=driver.find_elements(By.TAG_NAME,"tag")
-        for tag in tags:
-            key=tag.get_attribute("k")
-            value=tag.get_attribute("v")
-            if(key=="name"):
-                facility["name"]=value
-            if(key=="building" or key=="landuse"):
-                facility["label"]=value
+    driver.get("https://www.openstreetmap.org/api/0.6/"+facilityID)
+    
+    way= driver.find_element(By.TAG_NAME,"way")
+    
+    if (facilityType==0):
+        facility["geometry"]="polygon"
+    if (facilityType==1):
+        facility["geometry"]="point"
+    facility["lastchange"]=way.get_attribute("timestamp")
 
-        nodes_coordinates=[]
-        nodes_ids=[]
-        nds=driver.find_elements(By.TAG_NAME,"nd")
-        for node_id in nds:
-            nodes_ids.append(node_id.get_attribute("ref"))
-            
-        for node_id in nodes_ids:
-            driver.get("https://www.openstreetmap.org/api/0.6/node/"+node_id)
-            node=driver.find_element(By.TAG_NAME,"node")
-            nodes_coordinates.append([node.get_attribute("lat"),node.get_attribute("lon")])
+    tags=driver.find_elements(By.TAG_NAME,"tag")
+    for tag in tags:
+        key=tag.get_attribute("k")
+        value=tag.get_attribute("v")
+        if(key=="name"):
+            facility["name"]=value
+        if(key=="building" or key=="landuse"):
+            facility["label"]=value
 
-        facility["geolocation"]=GetCenterCoordinates(nodes_coordinates)
-        facility["coordinates"]=nodes_coordinates
-        return facility
-        
+    nodes_coordinates=[]
+    nodes_ids=[]
+    nds=driver.find_elements(By.TAG_NAME,"nd")
+    for node_id in nds:
+        nodes_ids.append(node_id.get_attribute("ref"))    
+    for node_id in nodes_ids:
+        driver.get("https://www.openstreetmap.org/api/0.6/node/"+node_id)
+        node=driver.find_element(By.TAG_NAME,"node")
+        nodes_coordinates.append([node.get_attribute("lat"),node.get_attribute("lon")])
+    facility["geolocation"]=GetCenterCoordinates(nodes_coordinates)
+    #facility["coordinates"]=nodes_coordinates
+    
+    return facility
